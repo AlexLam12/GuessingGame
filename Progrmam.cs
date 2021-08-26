@@ -35,6 +35,12 @@ namespace Intro
                         Console.WriteLine("You have four guesses to find the secret number, start guessing!");
                         break;
 
+                    case 99:
+                        difficulty = 99;
+                        turnCounter = 99;
+                        Console.WriteLine("Good luck, start guessing!");
+                        break;
+
                     default:
                         Console.WriteLine("You must enter a number between 1 and 3 to continue:");
                         break; 
@@ -58,8 +64,10 @@ namespace Intro
                 } else {
                     Console.WriteLine($"Your guess was {tooHigh}, you have {turnCounter-1} guesses left, guess again");
                 }
-                
+                if (turnCounter != 99)
+                {
                 turnCounter--;
+                }
                 answer = int.Parse(Console.ReadLine());
             }
         }

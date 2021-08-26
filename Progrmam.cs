@@ -6,9 +6,15 @@ namespace Intro
     {
         static void Main(string[] args)
         {
+            int secretNumber = 43;
             Console.WriteLine("Guess the secret number: ");
             int answer = int.Parse(Console.ReadLine());
-            Console.WriteLine($"Your answer was {answer}");
+            if (answer == secretNumber)
+            {
+            Console.WriteLine("Your answer was correct!");
+            } else {
+                Console.WriteLine("Your answer was wrong :(");
+            }
         }
     }
 }

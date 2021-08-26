@@ -7,22 +7,23 @@ namespace Intro
         static void Main(string[] args)
         {
             int secretNumber = 43;
-            int turnCounter = 4;
+            int turnCounter = 1;
 
             Console.WriteLine("Guess the secret number: ");
 
             int answer = int.Parse(Console.ReadLine());
 
                 
-            while (turnCounter > 1)
+            while (turnCounter < 4)
             {
                 if (answer == secretNumber)
                 {
                 Console.WriteLine("Your answer was correct!");
+                break;
                 } else {
-                    Console.WriteLine("Your answer was wrong, guess again :(");
+                    Console.WriteLine($"Your guess {turnCounter} was wrong, guess again");
                 }
-                turnCounter--;
+                turnCounter++;
                 answer = int.Parse(Console.ReadLine());
             }
         }

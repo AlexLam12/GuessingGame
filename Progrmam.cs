@@ -17,13 +17,21 @@ namespace Intro
                 
             while (turnCounter > 1)
             {
+                string tooHigh = "too high";
+
+                if (answer < secretNumber)
+                {
+                    tooHigh = "too low";
+                }
                 if (answer == secretNumber)
                 {
                 Console.WriteLine("Your answer was correct!");
                 break;
                 } else {
-                    Console.WriteLine($"You have {turnCounter-1} guesses left, guess again");
+                    Console.WriteLine($"Your guess was {tooHigh}, you have {turnCounter-1} guesses left, guess again");
                 }
+                
+
                 turnCounter--;
                 answer = int.Parse(Console.ReadLine());
             }

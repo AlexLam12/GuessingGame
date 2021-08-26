@@ -7,8 +7,8 @@ namespace Intro
         static void Main(string[] args)
         {
             Console.WriteLine("Guess the secret number: ");
-            string answer = Console.ReadLine();
-
+            int answer = int.Parse(Console.ReadLine());
+            Console.WriteLine($"Your answer was {answer}");
         }
     }
 }

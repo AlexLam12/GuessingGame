@@ -6,24 +6,25 @@ namespace Intro
     {
         static void Main(string[] args)
         {
-            int secretNumber = 43;
-            int turnCounter = 1;
+            int secretNumber = new Random().Next(1,100);
+            int turnCounter = 4;
 
             Console.WriteLine("Guess the secret number: ");
+            Console.WriteLine($"{secretNumber}");
 
             int answer = int.Parse(Console.ReadLine());
 
                 
-            while (turnCounter < 4)
+            while (turnCounter > 1)
             {
                 if (answer == secretNumber)
                 {
                 Console.WriteLine("Your answer was correct!");
                 break;
                 } else {
-                    Console.WriteLine($"Your guess {turnCounter} was wrong, guess again");
+                    Console.WriteLine($"You have {turnCounter-1} guesses left, guess again");
                 }
-                turnCounter++;
+                turnCounter--;
                 answer = int.Parse(Console.ReadLine());
             }
         }
